@@ -20,7 +20,8 @@ template_id = os.environ["TEMPLATE_ID"]
 
 
 def get_weather():
-  url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=204182891&clientType=android&sign=android&city=" + city
+  url1 = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=204182891&clientType=android&sign=android&city=" + city
+  url = "https://freecityid.market.alicloudapi.com/whapi/json/alicityweather/briefaqi'  -H 'Authorization:97375ec1ab8b4e2a9f02522113bf1483' --data 'cityId= &token=4dc41ae4c14189b47b2dc00c85b9d124'"+ city
   res = requests.get(url).json()
   weather = res['data']['list'][0]
   return weather['weather'], math.floor(weather['temp'])
