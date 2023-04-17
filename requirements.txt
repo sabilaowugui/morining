@@ -11,4 +11,3 @@ six==1.16.0
 urllib3==1.26.11
 wechatpy==1.8.18
 xmltodict==0.13.0
-Authorization:APPCODE 97375ec1ab8b4e2a9f02522113bf1483
