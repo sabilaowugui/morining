@@ -26,7 +26,7 @@ def get_weather():
   now = result['now']
   weather = now['text']
   temperature = math.floor(float(now['temperature']))
-  return weather, tempature
+  return weather, temperature
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
