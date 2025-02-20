@@ -45,10 +45,11 @@ def get_birthday_1():
   return (next - today).days
 
 def get_words():
-  words = requests.get("https://apis.tianapi.com/caihongpi/index?key=ac823a02d471776347fcf7a71bd91794")
-  if words.status_code != 200:
+  wordsres = requests.get("https://apis.tianapi.com/caihongpi/index?key=ac823a02d471776347fcf7a71bd91794")
+  if wordsres.status_code != 200:
     return get_words()
-  return words.json()['result']['content']
+  words = wordsres['result']['content']
+  return words
 
 def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
