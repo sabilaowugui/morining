@@ -47,8 +47,6 @@ def get_birthday_1():
 def get_words():
   url2 = "https://apis.tianapi.com/caihongpi/index?key=ac823a02d471776347fcf7a71bd91794"
   wordsres = requests.get(url2).json()
-  if wordsres.status_code != 200:
-    return get_words()
   words = wordsres['result']['content']
   return words
 
