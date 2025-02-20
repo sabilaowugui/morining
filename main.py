@@ -25,7 +25,7 @@ def get_weather():
   result = res['results'][0]
   now = result['now']
   weather = now['text']
-  tempature = math.floor(float(now['tempature']))
+  temperature = math.floor(float(now['temperature']))
   return weather, tempature
 
 def get_count():
