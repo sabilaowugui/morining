@@ -22,8 +22,8 @@ template_id = os.environ["TEMPLATE_ID"]
 def get_weather():
   url = "https://api.seniverse.com/v3/weather/now.json?key=S6qE0xJR1cW69c-gy&location=changchun&language=zh-Hans&unit=c"
   res = requests.get(url).json()
-  result = res['results'][0]
-  now = result['now']
+  resultwea = res['results'][0]
+  now = resultwea['now']
   weather = now['text']
   temperature = math.floor(float(now['temperature']))
   return weather, temperature
