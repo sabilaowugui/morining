@@ -48,7 +48,7 @@ def get_words():
   url2 = "https://apis.tianapi.com/caihongpi/index?key=ac823a02d471776347fcf7a71bd91794"
   wordsres = requests.get(url2).json()
   words = wordsres['result']['content']
-  return words.decode('utf-8')
+  return words
 
 def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
