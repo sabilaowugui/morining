@@ -44,11 +44,26 @@ def get_birthday_1():
     next = next.replace(year=next.year + 1)
   return (next - today).days
 
+#def get_words():
+#  url2 = "https://apis.tianapi.com/caihongpi/index?key=ac823a02d471776347fcf7a71bd91794"
+#  wordsres = requests.get(url2).json()
+#  words = wordsres['result']['content']
+#  return words
+
 def get_words():
-  url2 = "https://apis.tianapi.com/caihongpi/index?key=ac823a02d471776347fcf7a71bd91794"
-  wordsres = requests.get(url2).json()
-  words = wordsres['result']['content']
-  return words
+    try:
+        url = "https://apis.tianapi.com/caihongpi/index?key=ac823a02d471776347fcf7a71bd91794"
+        response = requests.get(url)
+        response.raise_for_status()  # 如果状态码非200，抛出异常
+        wordsres = response.json()
+        if wordsres.get('code') == 200:  # 天行数据成功响应
+            return wordsres['result']['content']
+        else:
+            print(f"API Error: {wordsres.get('msg')}")
+            return "今天接口有点问题，但你的笑容是最美的彩虹~"
+    except Exception as e:
+        print(f"Error fetching words: {e}")
+        return "遇见你已是今日最幸运的事~"
 
 #def get_words():
 #  words = requests.get("https://api.shadiao.pro/chp")
