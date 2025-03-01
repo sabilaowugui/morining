@@ -59,7 +59,6 @@ def get_words():
         wordsres = response.json()
         if wordsres.get('code') == 200:  # 天行数据成功响应
             words = wordsres['result']['content']
-            words = words.replace('"', '').replace("'", '')
             return words
         else:
             print(f"API Error: {wordsres.get('msg')}")
