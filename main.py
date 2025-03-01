@@ -54,7 +54,6 @@ def get_words():
     try:
         url = "https://apis.tianapi.com/caihongpi/index?key=ac823a02d471776347fcf7a71bd91794"
         response = requests.get(url)
-        response.encoding = 'utf-8'
         response.raise_for_status()  # 如果状态码非200，抛出异常
         wordsres = response.json()
         if wordsres.get('code') == 200:  # 天行数据成功响应
