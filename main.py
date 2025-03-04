@@ -57,8 +57,7 @@ def get_words():
         response.raise_for_status()  # 如果状态码非200，抛出异常
         wordsres = response.json()
         if wordsres.get('code') == 200:  # 天行数据成功响应
-            words = wordsres['result']['content']
-            return words
+            return wordsres['result']['content']     
         else:
             print(f"API Error: {wordsres.get('msg')}")
             return "今天接口有点问题，但你的笑容是最美的彩虹~"
